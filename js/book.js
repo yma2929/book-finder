@@ -3,7 +3,6 @@ const bookName = document.getElementById("book-name");
 const bookAuthor = document.getElementById("author-name");
 const send = document.getElementById("searchBtn");
 const clear = document.getElementById("resetBtn");
-const random = document.getElementById("randomBookBtn");
 
 
 async function getBookData(){
