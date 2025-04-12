@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+
+<head>
+    <meta charset="Utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="a webpage that interacts with an external api to retrive data about books">
+    <title>Book Finder</title>
+    <link rel="icon" type="image/png"  sizes = "32x32" href="./media/icon.jpg">
+
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Dancing+Script:wght@400..700&family=Elsie+Swash+Caps:wght@400;900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Vidaloka&display=swap" rel="stylesheet">
+
+    
+    <link rel="stylesheet" href="./css/books.css">
+    <script src="books.js" defer></script>
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>Book Finder</h1>
+        <p> Welcome to our webpage, where you will find your new favorite book!</p>
+        <p>Search for books by using the book's name or the author's name!!!!!!</p>
+        <img  class="picture" src="./media/bookbanner.jpeg"    alt="Book Image" id="book-image" >
+
+    </header>
+
+    
+
+            <section class="form">
+            <label> Book's Name:
+                <input type="text" id="book-name" name="book-name" size="45"   >
+            </label>
+
+            <br>
+
+            <label>Author's Name:
+                <input type="text" id="author-name" name="author-name"  size="45"  >
+            </label>
+           
+
+            <br>
+
+          
+        
+            </section>
+            <div id="container" > </div>
+
+           <div class="button">
+            <button  id="searchBtn" class="item" onclick="getBookData()" >Send</button> 
+            <button type="reset" id="resetBtn" class="item" onclick="displayErrorMessage()" >Clear</button>
+            <button id="randomBookBtn" class="item" onclick="getRandomData()" >Get Random Book</button>
+        
+           </div>
+
+            
+            <div id="info-container"></div>
+
+
+    <footer>
+
+        <p> &copy; 2025 Book Finder</p>
+        <p>All rights reserved</p>
+        <p> Feel free to contact us at <em>BookFinder@gmail.com</em> or call us at <strong>056-666-666</strong> </p>
+        <p>Website designed using Open Library API</p>
+    
+    </footer>
+
+
+
+    <script src="js/book.js" ></script>
+</body>
+
+</html>
