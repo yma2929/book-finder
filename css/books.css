@@ -8,7 +8,6 @@ h1{
     color:#370808;
 }
 
-
 p{
     font-family: "Vidaloka", serif;
     font-weight: 500;
@@ -43,7 +42,6 @@ label{
     margin: 10px;
 }
 
-
 .picture  {
     position: relative;
     width: 100%;
@@ -54,14 +52,12 @@ label{
     
    
 }
-
 .picture img{
     width: 100%;
     height: auto;
     object-fit: cover;
     display: block; 
 }
-
 .button{
     display: flex;
     flex-direction: row; 
@@ -69,7 +65,6 @@ label{
     margin: 20px 20px;
     
 }
-
 .button .item{
     padding: 10px 20px;
     cursor: pointer;
@@ -98,7 +93,6 @@ footer{
     background-color: rgb(244, 210, 221);
     border-radius: 20px; 
     box-shadow: 10px 10px 20px 5px rgba(0, 0, 0, 0.2) !important;
-
 }
 footer p{
     font-family: "Vidaloka", serif;
@@ -108,7 +102,6 @@ footer p{
     text-align: center;
     
 }
-
 .error-message{
     background-color: #f7ebc8;
     border-radius: 15px;
@@ -125,7 +118,6 @@ footer p{
     align-items: center;
     justify-content: center;
 }
-
 .book-card{
     background-color: #fbf6f9;
     border-radius: 20px;
@@ -141,4 +133,18 @@ footer p{
     font-weight: 500;
     font-size: 25px;
     color:#391419 ;
+}
+@media all and (max-width: 992px), (max-width: 768px), (max-width: 576px) {
+    .book-card{
+        width: 100%;
+        margin: 10px;
+    }
+    .form{
+        width: 100%;
+        margin: 10px;
+    }
+    .button{
+        flex-direction: column;
+    }
+    
 }
