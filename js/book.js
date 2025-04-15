@@ -24,6 +24,10 @@ async function getBookData(){
     try{
       //fetching data from the API
       const apiResponse = await fetch(APIendpoint);
+      //if there was an issue in connection
+      if(!apiResponse.ok){
+        throw new Error('HTTP error!');
+      }
       //parse the response and store it
       const data = await apiResponse.json();
      //getting 5 books from the response
@@ -32,13 +36,20 @@ async function getBookData(){
       const bookcontainer = document.getElementById("info-container");
       bookcontainer.innerHTML = ""; // Clear previous results
 
+      // if no books have been found
+      if(books.length == 0){
+        displayErrorMessage("No books found!");
+        return;
+      }
+
       //looping through the books array to get the needed data
       books.forEach(book => {
         const title = book.title || "No title available";
         const author = book.author_name ? book.author_name.join(", ") : "No author available";
         const publishYear = book.first_publish_year || "No publish year available";
         const coverUrl = book.cover_i ? `https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg` : "No cover available";
-        const isbn = book.isbn ? book.isbn[0] : "No ISBN available";
+        const isbn = book.isbn?.length > 0 ? book.isbn[0] : "No ISBN available!";
+
 
         //creating a div to hold the book data
         const bookCard = document.createElement("div");
@@ -69,7 +80,6 @@ async function getBookData(){
   }
 }
 
-
 //function to handle errors
 function displayErrorMessage(message){
   const errormessage = document.createElement("p");
@@ -93,19 +103,25 @@ function clearData(){
 
 //event types
 
+//clicking on send to submit form
 send.addEventListener("click",getBookData);
 
+//clicking on clear to reset api data
 clear.addEventListener("click",clearData);
 
-bookName.addEventListener("focus",()=>{
-  console.log("book name is focused.");
-})
-
+//hitting enter after writing the author's name activates the function
 bookAuthor.addEventListener("keyup",(e)=>{
   if(e.key == "Enter")
     getBookData();
 });
-
+//double-clicking the data api clears it 
 document.getElementById("info-container").addEventListener("dblclick",() =>{
   clearData();
+});
+
+//book name input is focused
+
+window.addEventListener("DOMContentLoaded",()=>{
+  bookName.focus();
+  console.log("book name is focused.");
 });
