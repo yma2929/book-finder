@@ -16,4 +16,9 @@ It fetches and displays book information using a public API (Open Library API).
 -JavaScript
 -Open Library API
 
+🌐 Live Preview
+
+
+You can view the live version here: https://yma2929.github.io/book-finder/
+
 Developer - Yamam Alkhamesi
